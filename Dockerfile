@@ -7,7 +7,7 @@ RUN apk add --update --no-cache --repository=http://dl-cdn.alpinelinux.org/alpin
 
 # Install PHP extensions
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
-ARG PHP_EXTENSIONS="intl bcmath gd pdo_mysql opcache uuid exif pcntl zip imagick exif"
+ARG PHP_EXTENSIONS="intl bcmath gd pdo_mysql opcache uuid exif pcntl zip imagick sockets"
 RUN install-php-extensions $PHP_EXTENSIONS
 
 # Install supervisord

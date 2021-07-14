@@ -2,7 +2,7 @@ FROM php:8.0-fpm-alpine
 
 # Install system dependencies
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories
-ARG APK_COMMON_DEPENDENCIES="dcron busybox-suid libcap curl zip unzip git"
+ARG APK_COMMON_DEPENDENCIES="bash dcron busybox-suid libcap curl zip unzip git"
 RUN apk add --update --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/latest-stable/main $APK_COMMON_DEPENDENCIES
 
 # Install PHP extensions
